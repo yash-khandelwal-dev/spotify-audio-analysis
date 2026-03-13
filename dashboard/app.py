@@ -31,14 +31,19 @@ def load_data():
 
     os.environ['KAGGLE_CONFIG_DIR'] = '.'
 
+    # download dataset
     if not os.path.exists("spotify.csv"):
         os.system("kaggle datasets download -d yashkhandelwal0409/spotify-songs-dataset-for-eda-analysis")
-        os.system("unzip spotify-songs-dataset-for-eda-analysis.zip")
+
+        # unzip dataset
+        os.system("unzip -o spotify-songs-dataset-for-eda-analysis.zip")
 
     df = pd.read_csv("spotify.csv")
+
     df.columns = df.columns.str.strip().str.lower()
 
     return df
+
 
 df = load_data()
 
