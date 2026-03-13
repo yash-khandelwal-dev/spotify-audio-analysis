@@ -43,6 +43,7 @@ def load_data():
     df.columns = df.columns.str.strip().str.lower()
 
     return df
+df = load_data()
 
 # -------------------------------------------------
 # Dataset Metrics
