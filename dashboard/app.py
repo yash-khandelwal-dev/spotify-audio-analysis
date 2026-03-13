@@ -1,3 +1,4 @@
+import gdown
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -26,14 +27,14 @@ st.markdown("Interactive exploration of Spotify audio features and song populari
 
 @st.cache_data
 def load_data():
-    url = "https://drive.google.com/uc?export=download&id=1Wr3S8Wfwk8otcuNagSPWRDBFHgR5xdTL"
-    df = pd.read_csv(url)
+    url = "https://drive.google.com/uc?id=1Wr3S8Wfwk8otcuNagSPWRDBFHgR5xdTL"
+    
+    output = "spotify.csv"
+    gdown.download(url, output, quiet=False)
+    
+    df = pd.read_csv(output)
     df.columns = df.columns.str.strip().str.lower()
     return df
-
-df = load_data()
-
-st.write("Columns in dataset:", df.columns)
 
 # -------------------------------------------------
 # Dataset Metrics
