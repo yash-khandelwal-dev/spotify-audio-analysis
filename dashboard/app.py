@@ -53,8 +53,8 @@ st.subheader("📊 Dataset Overview")
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Total Songs", len(df))
-col2.metric("Average Popularity", round(df['popularity'].mean(), 2))
-col3.metric("Average Tempo (BPM)", round(df['tempo'].mean(), 2))
+# col2.metric("Average Popularity", round(df['popularity'].mean(), 2))
+# col3.metric("Average Tempo (BPM)", round(df['tempo'].mean(), 2))
 
 st.markdown("---")
 
