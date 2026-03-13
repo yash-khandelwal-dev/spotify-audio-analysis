@@ -33,6 +33,8 @@ def load_data():
 
 df = load_data()
 
+st.write("Columns in dataset:", df.columns)
+
 # -------------------------------------------------
 # Dataset Metrics
 # -------------------------------------------------
