@@ -6,10 +6,12 @@
 ![Data Science](https://img.shields.io/badge/Data%20Science-EDA-green)
 ![Visualization](https://img.shields.io/badge/Visualization-Matplotlib%20%7C%20Seaborn-orange)
 ![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-red)
-[![Live Demo](https://img.shields.io/badge/Live-Dashboard-green)](https://spotify-audio-analysis.streamlit.app)
+## 🚀 Live Dashboard
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://spotify-audio-analysis.streamlit.app)
 
 <p align="center">
-<img src="visuals/correlation_heatmap.png" width="500">
+<img src="visuals/correlation_heatmap.png" width="500" alt="Correlation heatmap showing relationships between Spotify audio features such as energy, loudness, danceability, and popularity. The heatmap uses a color gradient from blue to orange to indicate negative to positive correlations. Strong positive correlation is visible between energy and loudness, while danceability and popularity show weak correlation. The environment is a clean data visualization with labeled axes and a color bar legend. The tone is analytical and data-focused.">
 </p>
 
 ---
