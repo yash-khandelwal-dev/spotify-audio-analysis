@@ -29,20 +29,15 @@ st.markdown("Interactive exploration of Spotify audio features and song populari
 @st.cache_data
 def load_data():
 
-    os.environ['KAGGLE_CONFIG_DIR'] = '.'
+    url = "https://github.com/yash-khandelwal-dev/spotify-audio-analysis/releases/download/Dataset/spotify.csv"
 
-    # download dataset
-    if not os.path.exists("spotify.csv"):
-        os.system("kaggle datasets download -d yashkhandelwal0409/spotify-songs-dataset-for-eda-analysis")
-
-        # unzip dataset
-        os.system("unzip -o spotify-songs-dataset-for-eda-analysis.zip")
-
-    df = pd.read_csv("spotify.csv")
+    df = pd.read_csv(url)
 
     df.columns = df.columns.str.strip().str.lower()
 
     return df
+
+
 df = load_data()
 
 # -------------------------------------------------
