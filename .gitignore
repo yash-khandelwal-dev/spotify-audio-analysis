@@ -26,3 +26,5 @@ env/
 
 # Temporary files
 *.log
+
+kaggle.json

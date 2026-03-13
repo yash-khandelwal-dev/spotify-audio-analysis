@@ -1,3 +1,4 @@
+import os
 import gdown
 import streamlit as st
 import pandas as pd
@@ -27,14 +28,19 @@ st.markdown("Interactive exploration of Spotify audio features and song populari
 
 @st.cache_data
 def load_data():
-    url = "https://drive.google.com/uc?id=1Wr3S8Wfwk8otcuNagSPWRDBFHgR5xdTL"
-    
-    output = "spotify.csv"
-    gdown.download(url, output, quiet=False)
-    
-    df = pd.read_csv(output)
+
+    os.environ['KAGGLE_CONFIG_DIR'] = '.'
+
+    if not os.path.exists("spotify.csv"):
+        os.system("kaggle datasets download -d yashkhandelwal0409/spotify-songs-dataset-for-eda-analysis")
+        os.system("unzip spotify-songs-dataset-for-eda-analysis.zip")
+
+    df = pd.read_csv("spotify.csv")
     df.columns = df.columns.str.strip().str.lower()
+
     return df
+
+df = load_data()
 
 # -------------------------------------------------
 # Dataset Metrics
