@@ -26,7 +26,7 @@ st.markdown("Interactive exploration of Spotify audio features and song populari
 
 @st.cache_data
 def load_data():
-    url = "https://drive.google.com/uc?id=1Wr3S8Wfwk8otcuNagSPWRDBFHgR5xdTL"
+    url = "https://drive.google.com/uc?export=download&id=1Wr3S8Wfwk8otcuNagSPWRDBFHgR5xdTL"
     df = pd.read_csv(url)
     df.columns = df.columns.str.strip().str.lower()
     return df
