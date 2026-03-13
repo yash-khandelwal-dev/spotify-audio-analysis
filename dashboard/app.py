@@ -35,13 +35,14 @@ def load_data():
 
     df.columns = df.columns.str.strip().str.lower()
 
+    df["popularity"] = pd.to_numeric(df["popularity"], errors="coerce")
+    df["tempo"] = pd.to_numeric(df["tempo"], errors="coerce")
+
+    df = df.dropna(subset=["popularity", "tempo"])
+
     return df
 
-
 df = load_data()
-
-df["popularity"] = pd.to_numeric(df["popularity"], errors="coerce")
-df["tempo"] = pd.to_numeric(df["tempo"], errors="coerce")
 
 # -------------------------------------------------
 # Dataset Metrics
@@ -88,19 +89,20 @@ y_feature = st.sidebar.selectbox(
 
 st.subheader("📈 Feature Relationship Explorer")
 
-fig1, ax1 = plt.subplots(figsize=(8,5))
+fig, ax = plt.subplots()
+
+# sample dataset to improve performance
+df_sample = df.sample(min(5000, len(df)))
 
 sns.scatterplot(
-    data=df.sample(10000),
+    data=df_sample,
     x=x_feature,
     y=y_feature,
     alpha=0.4,
-    ax=ax1
+    ax=ax
 )
 
-ax1.set_title(f"{x_feature.capitalize()} vs {y_feature.capitalize()}")
-
-st.pyplot(fig1)
+st.pyplot(fig)
 
 st.markdown("---")
 
