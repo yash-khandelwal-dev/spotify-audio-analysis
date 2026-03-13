@@ -40,6 +40,9 @@ def load_data():
 
 df = load_data()
 
+df["popularity"] = pd.to_numeric(df["popularity"], errors="coerce")
+df["tempo"] = pd.to_numeric(df["tempo"], errors="coerce")
+
 # -------------------------------------------------
 # Dataset Metrics
 # -------------------------------------------------
@@ -126,22 +129,21 @@ st.markdown("---")
 # Correlation Heatmap
 # -------------------------------------------------
 
-st.subheader("🔥 Feature Correlation Heatmap")
+st.subheader("Feature Correlation Heatmap")
 
-corr = df.corr(numeric_only=True)
+fig, ax = plt.subplots(figsize=(8,6))
+sns.heatmap(df.corr(numeric_only=True), cmap="coolwarm", ax=ax)
 
-fig3, ax3 = plt.subplots(figsize=(10,6))
-
-sns.heatmap(
-    corr,
-    cmap="coolwarm",
-    linewidths=0.5,
-    ax=ax3
-)
-
-st.pyplot(fig3)
+st.pyplot(fig)
 
 st.markdown("---")
+
+st.subheader("Popularity Distribution")
+
+fig, ax = plt.subplots()
+sns.histplot(df["popularity"], bins=30, kde=True, ax=ax)
+
+st.pyplot(fig)
 
 # -------------------------------------------------
 # Dataset Preview
@@ -150,3 +152,15 @@ st.markdown("---")
 st.subheader("📋 Dataset Preview")
 
 st.dataframe(df.head(100))
+
+st.subheader("Key Insights")
+
+st.markdown("""
+• Songs with higher **danceability** tend to have slightly higher popularity.
+
+• **Energy and loudness** show strong correlation.
+
+• Most songs cluster around **tempo 100–150 BPM**.
+
+• Popular songs generally have **moderate danceability and energy**.
+""")
