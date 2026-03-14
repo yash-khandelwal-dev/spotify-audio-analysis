@@ -12,7 +12,7 @@
 
 <p align="center">
 <p align="center">
-<img src="./visuals/correlation_heatmap.png" width="600" alt="Correlation heatmap">
+<img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/correlation_heatmap.png" width="600" alt="Correlation heatmap">
 </p>
 Correlation heatmap showing relationships between Spotify audio features such as energy, loudness, danceability, and popularity. The heatmap uses a color gradient from blue to orange to indicate negative to positive correlations. Strong positive correlation is visible between energy and loudness, while danceability and popularity show weak correlation. The environment is a clean data visualization with labeled axes and a color bar legend. The tone is analytical and data-focused.">
 </p>
@@ -298,7 +298,7 @@ EDA techniques used:
 ## Popularity Distribution
 
 <p align="center">
-<img src="./visuals/popularity_distribution.png" width="600" alt="Popularity Distribution">
+<img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/popularity_distribution.png" width="600" alt="Popularity Distribution">
 </p>
 
 The distribution of Spotify popularity scores shows a long-tail pattern. Most tracks receive low popularity values, while only a small percentage achieve high engagement levels.
@@ -311,7 +311,7 @@ The distribution of Spotify popularity scores shows a long-tail pattern. Most tr
 ## Feature Correlation Heatmap
 
 <p align="center">
-<img src="./visuals/correlation_heatmap.png" width="600" alt="Correlation Heatmap">
+<img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/correlation_heatmap.png" width="600" alt="Correlation Heatmap">
 </p>
 
 The correlation matrix highlights relationships between different audio attributes.
@@ -330,7 +330,7 @@ Key observations:
 ## Danceability vs Popularity
 
 <p align="center">
-<img src="./visuals/danceability_popularity.png" width="600" alt="Danceability popularity">
+<img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/danceability_popularity.png" width="600" alt="Danceability popularity">
 </p>
 
 This scatter plot explores the relationship between danceability and popularity.
@@ -348,19 +348,20 @@ The following visualizations further explore relationships between different Spo
 
 <table>
 <tr>
-<td><img src="./visuals/energy_loudness.png" width="380"></td>
-<td><img src="./visuals/energy_vs_popularity.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/energy_loudness.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/energy_vs_popularity.png" width="380"></td>
 </tr>
 
 <tr>
-<td><img src="./visuals/acousticness_vs_popularity.png" width="380"></td>
-<td><img src="./visuals/tempo_distribution.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/acousticness_vs_popularity.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/tempo_distribution.png" width="380"></td>
 </tr>
 
 <tr>
-<td><img src="./visuals/danceability_popularity_analysis.png" width="380"></td>
-<td><img src="./visuals/popular_vs_nonpopular.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/danceability_popularity_analysis.png" width="380"></td>
+<td><img src="https://raw.githubusercontent.com/yash-khandelwal-dev/spotify-audio-analysis/main/visuals/popular_vs_nonpopular.png" width="380"></td>
 </tr>
+</table>
 
 <tr>
 <td colspan="2" align="center">
