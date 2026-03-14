@@ -89,9 +89,9 @@ y_feature = st.sidebar.selectbox(
 
 st.subheader("📈 Feature Relationship Explorer")
 
-fig, ax = plt.subplots()
-
 # sample dataset to improve performance
+fig, ax = plt.subplots(figsize=(8,5))
+
 df_sample = df.sample(min(5000, len(df)))
 
 sns.scatterplot(
@@ -102,7 +102,12 @@ sns.scatterplot(
     ax=ax
 )
 
-st.pyplot(fig)
+ax.set_title(f"{x_feature.capitalize()} vs {y_feature.capitalize()}")
+
+with st.container():
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.pyplot(fig)
 
 st.markdown("---")
 
@@ -117,35 +122,51 @@ selected_feature = st.selectbox(
     features
 )
 
-fig2, ax2 = plt.subplots(figsize=(8,5))
+fig2, ax2 = plt.subplots(figsize=(7,4))
 
 sns.histplot(df[selected_feature], kde=True, ax=ax2)
 
-ax2.set_title(f"Distribution of {selected_feature.capitalize()}")
+ax2.set_title(f"{selected_feature.capitalize()} Distribution")
 
-st.pyplot(fig2)
+col1, col2, col3 = st.columns([1,2,1])
+
+with col2:
+    st.pyplot(fig2)
 
 st.markdown("---")
 
 # -------------------------------------------------
 # Correlation Heatmap
 # -------------------------------------------------
+# -------------------------------------------------
+# Correlation Heatmap
+# -------------------------------------------------
 
 st.subheader("Feature Correlation Heatmap")
 
-fig, ax = plt.subplots(figsize=(8,6))
+fig, ax = plt.subplots(figsize=(7,5))
 sns.heatmap(df.corr(numeric_only=True), cmap="coolwarm", ax=ax)
 
-st.pyplot(fig)
+col1, col2, col3 = st.columns([1,2,1])
+
+with col2:
+    st.pyplot(fig)
 
 st.markdown("---")
 
+# -------------------------------------------------
+# Popularity Distribution
+# -------------------------------------------------
+
 st.subheader("Popularity Distribution")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(7,4))
 sns.histplot(df["popularity"], bins=30, kde=True, ax=ax)
 
-st.pyplot(fig)
+col1, col2, col3 = st.columns([1,2,1])
+
+with col2:
+    st.pyplot(fig)
 
 # -------------------------------------------------
 # Dataset Preview
